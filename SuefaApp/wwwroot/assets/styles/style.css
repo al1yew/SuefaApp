@@ -1,0 +1,742 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: MontBold;
+  src: url(../fonts/montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: MontMedium;
+  src: url(../fonts/montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: MontLight;
+  src: url(../fonts/montserrat/Montserrat-Light.ttf);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+:root {
+  --montbold: MontBold;
+  --montmedium: MontMedium;
+  --montlight: MontLight;
+}
+
+.preloaderdiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 9999999999999;
+  top: 0;
+  left: 0;
+  background-color: #46025F !important;
+}
+
+.preloaderdiv .preloader {
+  border: 10px solid #89DC65;
+  border-radius: 100%;
+  border-top: 10px solid #000000;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --montbold: MontBold;
+  --montmedium: MontMedium;
+  --montlight: MontLight;
+}
+
+@media (max-width: 576px) {
+  body {
+    min-height: 89vh !important;
+  }
+  #login .all form {
+    border-radius: 10px !important;
+    padding: 20px !important;
+  }
+  #login .all form .loginp {
+    font-size: 16px !important;
+  }
+  #login .all form label {
+    margin-top: 20px !important;
+    font-size: 14px !important;
+  }
+  #login .all form .inputkeeper span {
+    letter-spacing: 2px !important;
+    font-size: 14px !important;
+    padding-bottom: 6px !important;
+  }
+  #login .all form .inputkeeper input {
+    font-size: 14px !important;
+    letter-spacing: 3px !important;
+  }
+  #login .all form .inputkeeper input::-webkit-input-placeholder {
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
+  }
+  #login .all form .inputkeeper input:-ms-input-placeholder {
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
+  }
+  #login .all form .inputkeeper input::-ms-input-placeholder {
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
+  }
+  #login .all form .inputkeeper input::placeholder {
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
+  }
+  #login .all form button {
+    font-size: 14px !important;
+    margin: 0 auto !important;
+    margin-top: 30px !important;
+  }
+  #login .all form button:hover {
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+  }
+  #mainpage {
+    padding: 15px 0 !important;
+  }
+  #mainpage .all .middle {
+    overflow-x: hidden !important;
+  }
+  #mainpage .all .middle .first {
+    margin-bottom: 20px !important;
+  }
+  #mainpage .all .middle .first span {
+    font-size: 16px !important;
+    margin-bottom: 10px !important;
+    padding: 8px 0 !important;
+  }
+  #mainpage .all .middle .second {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+  #mainpage .all .middle .second span {
+    width: 47% !important;
+    margin: 0 !important;
+    font-size: 20px !important;
+  }
+  #mainpage .all .middle .third {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+    margin-bottom: 30px !important;
+    font-size: 65px !important;
+    line-height: 70px !important;
+  }
+  #mainpage .all .middle .third span {
+    margin: 0 !important;
+  }
+  #mainpage .all .middle .fourth {
+    margin-bottom: 30px !important;
+  }
+  #mainpage .all .middle .fourth .gametap {
+    width: 28% !important;
+    height: calc((100vw*0.27)) !important;
+    margin: 0 !important;
+  }
+  #mainpage .all .middle .fourth .gametap svg {
+    height: calc(100vw*0.15) !important;
+  }
+  #mainpage .all .middle .fourth .gametap:hover {
+    -webkit-transform: translateY(0%) scale(1) !important;
+            transform: translateY(0%) scale(1) !important;
+  }
+  #mainpage .all .middle .fifth {
+    padding: 10px !important;
+    width: 50% !important;
+    font-size: 16px !important;
+  }
+  #mainpage .all .middle .absolutuser {
+    top: 41% !important;
+    left: -10% !important;
+  }
+  #mainpage .all .middle .absolutuser svg {
+    height: 50px !important;
+  }
+  #mainpage .all .middle .moveright {
+    left: 0% !important;
+  }
+  #mainpage .all .middle .absolutcomp {
+    top: 41% !important;
+    right: -10% !important;
+  }
+  #mainpage .all .middle .absolutcomp svg {
+    height: 50px !important;
+  }
+  #mainpage .all .middle .moveleft {
+    right: 0% !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  #mainpage {
+    padding: 20px 0 !important;
+  }
+  #mainpage .all .middle .first {
+    margin-bottom: 20px !important;
+  }
+  #mainpage .all .middle .first span {
+    font-size: 16px !important;
+    width: 47% !important;
+  }
+  #mainpage .all .middle .second {
+    margin-bottom: 20px !important;
+  }
+  #mainpage .all .middle .second span {
+    width: 35% !important;
+    font-size: 16px !important;
+  }
+  #mainpage .all .middle .second span:nth-child(1) {
+    margin-right: 20px !important;
+  }
+  #mainpage .all .middle .second span:nth-child(2) {
+    margin-left: 20px !important;
+  }
+  #mainpage .all .middle .third {
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    font-size: 70px !important;
+    line-height: 70px !important;
+  }
+  #mainpage .all .middle .fourth {
+    margin-bottom: 20px !important;
+  }
+  #mainpage .all .middle .fourth .gametap {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  #mainpage .all .middle .fourth .gametap svg {
+    height: 50px !important;
+  }
+  #mainpage .all .middle .fourth .gametap:hover {
+    -webkit-transform: translateY(0%) scale(1) !important;
+            transform: translateY(0%) scale(1) !important;
+  }
+  #mainpage .all .middle .fifth {
+    width: 35% !important;
+    font-size: 16px !important;
+  }
+  #mainpage .all .middle .absolutuser {
+    top: 31% !important;
+  }
+  #mainpage .all .middle .absolutuser svg {
+    height: 60px !important;
+  }
+  #mainpage .all .middle .absolutcomp {
+    top: 31% !important;
+  }
+  #mainpage .all .middle .absolutcomp svg {
+    height: 60px !important;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  #mainpage {
+    padding: 20px 0 !important;
+  }
+  #mainpage .all .middle .first {
+    margin-bottom: 30px !important;
+  }
+  #mainpage .all .middle .first span {
+    font-size: 16px !important;
+  }
+  #mainpage .all .middle .second span {
+    width: 35% !important;
+    font-size: 16px !important;
+  }
+  #mainpage .all .middle .third {
+    margin-bottom: 30px !important;
+    font-size: 90px !important;
+    line-height: 80px !important;
+  }
+  #mainpage .all .middle .fourth {
+    margin-bottom: 30px !important;
+  }
+  #mainpage .all .middle .fourth .gametap {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  #mainpage .all .middle .fourth .gametap svg {
+    height: 70px !important;
+  }
+  #mainpage .all .middle .fifth {
+    padding: 15px !important;
+    width: 35% !important;
+    font-size: 18px !important;
+  }
+  #mainpage .all .middle .absolutuser {
+    top: 32% !important;
+  }
+  #mainpage .all .middle .absolutuser svg {
+    height: 70px !important;
+  }
+  #mainpage .all .middle .absolutcomp {
+    top: 32% !important;
+  }
+  #mainpage .all .middle .absolutcomp svg {
+    height: 70px !important;
+  }
+}
+
+#body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#252525), to(#46025F));
+  background: linear-gradient(180deg, #252525 0%, #46025F 100%);
+  min-height: 100vh;
+  color: white;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+
+#login {
+  font-family: var(--montmedium);
+  margin: 0;
+  padding: 0;
+}
+
+#login .all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#login .all form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 15px;
+  padding: 30px;
+  -webkit-box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65, 0px 0px 20px 1px #46025F;
+          box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65, 0px 0px 20px 1px #46025F;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: var(--montmedium);
+}
+
+#login .all form .loginp {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #89DC65;
+}
+
+#login .all form label {
+  margin-top: 30px;
+  color: #89DC65;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#login .all form .inputkeeper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65, 0px 0px 20px 1px #46025F;
+          box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65, 0px 0px 20px 1px #46025F;
+}
+
+#login .all form .inputkeeper span {
+  letter-spacing: 3px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  padding: 6px 5px;
+  padding-left: 15px;
+  font-size: 18px;
+  color: #89DC65;
+  transition: 0.2s;
+  text-align: end;
+}
+
+#login .all form .inputkeeper input {
+  font-size: 18px;
+  letter-spacing: 3px;
+  outline: none;
+  border: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  padding: 6px 0px;
+  transition: 0.2s;
+  color: #89DC65;
+  background: transparent;
+}
+
+#login .all form .inputkeeper input::-webkit-input-placeholder {
+  color: #89DC65;
+  font-size: 18px;
+}
+
+#login .all form .inputkeeper input:-ms-input-placeholder {
+  color: #89DC65;
+  font-size: 18px;
+}
+
+#login .all form .inputkeeper input::-ms-input-placeholder {
+  color: #89DC65;
+  font-size: 18px;
+}
+
+#login .all form .inputkeeper input::placeholder {
+  color: #89DC65;
+  font-size: 18px;
+}
+
+#login .all form button {
+  background-color: #89DC65;
+  color: #46025F;
+  font-size: 18px;
+  padding: 7px 60px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 30px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  outline: none;
+  border: none;
+}
+
+#login .all form button:hover {
+  background-color: rgba(137, 220, 101, 0.6);
+  color: #161616;
+}
+
+#mainpage {
+  font-family: var(--montmedium);
+  margin: 0;
+  padding: 0;
+  padding: 20px 0;
+}
+
+#mainpage .all {
+  margin: 0;
+  padding: 0;
+}
+
+#mainpage .all .middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+#mainpage .all .middle .first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+#mainpage .all .middle .first span {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+  border-radius: 25px;
+  background-color: green;
+  background: rgba(255, 255, 255, 0.01);
+  color: #89DC65;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  -webkit-box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65;
+          box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#mainpage .all .middle .first span:hover {
+  background: rgba(153, 6, 6, 0.2);
+}
+
+#mainpage .all .middle .second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+#mainpage .all .middle .second span {
+  text-align: center;
+  width: 27%;
+  background: #46025F;
+  border-radius: 30px;
+  color: #89DC65;
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+#mainpage .all .middle .second span:nth-child(1) {
+  margin-right: 10px;
+}
+
+#mainpage .all .middle .second span:nth-child(2) {
+  margin-left: 10px;
+}
+
+#mainpage .all .middle .third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 35px;
+  font-size: 105px;
+  font-weight: 800;
+  line-height: 100px;
+  color: #89DC65;
+}
+
+#mainpage .all .middle .third span {
+  text-align: center;
+}
+
+#mainpage .all .middle .third span:nth-child(1) {
+  margin-right: 30px;
+}
+
+#mainpage .all .middle .third span:nth-child(2) {
+  margin-left: 30px;
+}
+
+#mainpage .all .middle .fourth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+#mainpage .all .middle .fourth .gametap {
+  background: rgba(255, 255, 255, 0.01);
+  -webkit-box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65;
+          box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  border-radius: 30px;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#mainpage .all .middle .fourth .gametap:hover {
+  background: rgba(153, 6, 6, 0.2);
+  -webkit-transform: translateY(5%) scale(1.1);
+          transform: translateY(5%) scale(1.1);
+}
+
+#mainpage .all .middle .fifth {
+  background: #89DC65;
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  width: 25%;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+  color: #46025F;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#mainpage .all .middle .fifth:hover {
+  background: #89dc6570;
+  color: #bbbbbb;
+}
+
+#mainpage .all .middle .absolutuser {
+  position: absolute;
+  top: 27%;
+  left: 0%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  z-index: 5;
+  opacity: 0;
+}
+
+#mainpage .all .middle .moveright {
+  left: 7%;
+  -webkit-transform: rotate(90deg) scale(1.2);
+          transform: rotate(90deg) scale(1.2);
+  opacity: 1;
+}
+
+#mainpage .all .middle .absolutcomp {
+  position: absolute;
+  top: 27%;
+  right: 0%;
+  -webkit-transform: rotate(-90deg) scaleX(-1);
+          transform: rotate(-90deg) scaleX(-1);
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  opacity: 0;
+  z-index: 5;
+}
+
+#mainpage .all .middle .moveleft {
+  right: 7%;
+  -webkit-transform: rotate(-90deg) scaleX(-1) scale(1.2);
+          transform: rotate(-90deg) scaleX(-1) scale(1.2);
+  opacity: 1;
+}
+/*# sourceMappingURL=style.css.map */

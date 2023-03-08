@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Extensions.DependencyInjection;
-
+using SuefaApp.Implementations;
+using SuefaApp.Interfaces;
 
 namespace SuefaApp.Extensions
 {
@@ -9,6 +10,7 @@ namespace SuefaApp.Extensions
         public static void ServicesBuilder(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IHomeService, HomeService>();
         }
     }
 }

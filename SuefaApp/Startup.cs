@@ -32,7 +32,7 @@ namespace SuefaApp
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
 
-            //services.IdentityBuilder();
+            services.IdentityBuilder();
 
             services.AddDbContext<AppDbContext>(options =>
             {
@@ -44,14 +44,14 @@ namespace SuefaApp
                 options.AddProfile(new MappingProfile());
             });
 
-            //services.ServicesBuilder();
+            services.ServicesBuilder();
 
             //services.AddSession(options =>
             //{
             //    options.IdleTimeout = TimeSpan.FromSeconds(10);
             //});
 
-            //services.AddHttpContextAccessor();
+            services.AddHttpContextAccessor();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -69,9 +69,9 @@ namespace SuefaApp
 
             app.UseStaticFiles();
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

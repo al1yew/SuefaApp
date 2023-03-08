@@ -1,0 +1,55 @@
+﻿@model LoginVM
+
+<style type="text/css">
+
+    #validation {
+        width: 100%;
+    }
+
+    .validation-summary-errors {
+        width: 100%;
+    }
+
+    #validation ul {
+        list-style: none;
+        text-align: center;
+        width: 100%;
+        font-size: 16px;
+        color: red;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .validation-summary-errors ul {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        color: red;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+</style>
+
+<section id="login">
+    <div class="container">
+        <div class="row all">
+            <form class="col-lg-6 col-12 loginform" id="loginform" asp-controller="Home" asp-action="Login">
+                <p class="col-lg-12 col-12 loginp">Oyuna qatilib uda bilsən, əlaqə saxlaya bilək!</p>
+                <div id="validation" asp-validation-summary="ModelOnly"></div>
+
+                <label for="phoneno" class="col-lg-12 col-12">Telefon nömrəsi:</label>
+                <div class="inputkeeper col-lg-12 col-12">
+                    <span class="kodstrani">+994</span>
+                    <input asp-for="Login" inputmode="numeric" numeric autocomplete="off"
+                           placeholder="50 500 50 50" type="text" required maxlength="9" minlength="9"
+                           class="phoneno col-lg-9 col-9" id="phoneno">
+                </div>
+
+                <button type="submit" class="btn" form="loginform">Getdik!</button>
+            </form>
+        </div>
+    </div>
+</section>

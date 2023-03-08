@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --montbold: MontBold;
+    --montmedium: MontMedium;
+    --montlight: MontLight;
+}
+
+@media (max-width:576px) {
+
+    body {
+        min-height: 89vh !important;
+    }
+
+    #login {
+        .all {
+            form {
+                border-radius: 10px !important;
+                padding: 20px !important;
+
+                .loginp {
+                    font-size: 16px !important;
+                }
+
+                label {
+                    margin-top: 20px !important;
+                    font-size: 14px !important;
+                }
+
+                .inputkeeper {
+
+                    span {
+                        letter-spacing: 2px !important;
+                        font-size: 14px !important;
+                        padding-bottom: 6px !important;
+                    }
+
+                    input {
+                        font-size: 14px !important;
+                        letter-spacing: 3px !important;
+
+                        &::placeholder {
+                            font-size: 14px !important;
+                            letter-spacing: 2px !important;
+                        }
+                    }
+
+                }
+
+                button {
+                    font-size: 14px !important;
+                    margin: 0 auto !important;
+                    margin-top: 30px !important;
+
+                    &:hover {
+                        box-shadow: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    #mainpage {
+        padding: 15px 0 !important;
+
+        .all {
+            .middle {
+                overflow-x: hidden !important;
+
+                .first {
+                    margin-bottom: 20px !important;
+
+                    span {
+                        font-size: 16px !important;
+                        margin-bottom: 10px !important;
+                        padding: 8px 0 !important;
+                    }
+                }
+
+                .second {
+                    justify-content: space-between !important;
+
+                    span {
+                        width: 47% !important;
+                        margin: 0 !important;
+                        font-size: 20px !important;
+                    }
+                }
+
+                .third {
+                    justify-content: space-between !important;
+                    margin-bottom: 30px !important;
+                    font-size: 65px !important;
+                    line-height: 70px !important;
+
+                    span {
+                        margin: 0 !important;
+                    }
+                }
+
+                .fourth {
+                    margin-bottom: 30px !important;
+
+                    .gametap {
+                        width: 28% !important;
+                        height: calc((100vw*0.27)) !important;
+                        margin: 0 !important;
+
+                        svg {
+                            height: calc(100vw*0.15) !important;
+                        }
+
+                        &:hover {
+                            transform: translateY(0%) scale(1) !important;
+                        }
+                    }
+                }
+
+                .fifth {
+                    padding: 10px !important;
+                    width: 50% !important;
+                    font-size: 16px !important;
+                }
+
+                .absolutuser {
+                    top: 41% !important;
+                    left: -10% !important;
+
+                    svg {
+                        height: 50px !important;
+                    }
+                }
+
+                .moveright {
+                    left: 0% !important;
+                }
+
+                .absolutcomp {
+                    top: 41% !important;
+                    right: -10% !important;
+
+                    svg {
+                        height: 50px !important;
+                    }
+                }
+
+                .moveleft {
+                    right: 0% !important;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:576px) and (max-width:992px) {
+
+    #mainpage {
+        padding: 20px 0 !important;
+
+        .all {
+
+            .middle {
+
+                .first {
+                    margin-bottom: 20px !important;
+
+                    span {
+                        font-size: 16px !important;
+                        width: 47% !important;
+                    }
+                }
+
+                .second {
+                    margin-bottom: 20px !important;
+
+                    span {
+                        width: 35% !important;
+                        font-size: 16px !important;
+
+                        &:nth-child(1) {
+                            margin-right: 20px !important;
+                        }
+
+                        &:nth-child(2) {
+                            margin-left: 20px !important;
+                        }
+                    }
+                }
+
+                .third {
+                    width: 100% !important;
+                    margin-bottom: 20px !important;
+                    font-size: 70px !important;
+                    line-height: 70px !important;
+                }
+
+                .fourth {
+                    margin-bottom: 20px !important;
+
+                    .gametap {
+                        width: 100px !important;
+                        height: 100px !important;
+
+                        svg {
+                            height: 50px !important;
+                        }
+
+                        &:hover {
+                            transform: translateY(0%) scale(1) !important;
+                        }
+                    }
+                }
+
+                .fifth {
+                    width: 35% !important;
+                    font-size: 16px !important;
+                }
+
+                .absolutuser {
+                    top: 31% !important;
+
+                    svg {
+                        height: 60px !important;
+                    }
+                }
+
+                .absolutcomp {
+                    top: 31% !important;
+
+                    svg {
+                        height: 60px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:992px) and (max-width:1200px) {
+
+    #mainpage {
+        padding: 20px 0 !important;
+
+        .all {
+            .middle {
+                .first {
+                    margin-bottom: 30px !important;
+
+                    span {
+                        font-size: 16px !important;
+                    }
+                }
+
+                .second {
+                    span {
+                        width: 35% !important;
+                        font-size: 16px !important;
+                    }
+                }
+
+                .third {
+                    margin-bottom: 30px !important;
+                    font-size: 90px !important;
+                    line-height: 80px !important;
+                }
+
+                .fourth {
+                    margin-bottom: 30px !important;
+
+                    .gametap {
+                        width: 100px !important;
+                        height: 100px !important;
+
+                        svg {
+                            height: 70px !important;
+                        }
+                    }
+                }
+
+                .fifth {
+                    padding: 15px !important;
+                    width: 35% !important;
+                    font-size: 18px !important;
+                }
+
+                .absolutuser {
+                    top: 32% !important;
+
+                    svg {
+                        height: 70px !important;
+                    }
+                }
+
+                .absolutcomp {
+                    top: 32% !important;
+
+                    svg {
+                        height: 70px !important;
+                    }
+                }
+            }
+        }
+    }
+}
