@@ -245,7 +245,7 @@ namespace SuefaApp.Implementations
             {
                 Event currentEvent = appUser.Events.Last();
 
-                currentEvent.Message += $"{time.ToString("dd/MM/yyyy HH:mm:ss")}: User-{responseVM.UserScore} : {responseVM.CompScore}-Comp";
+                currentEvent.Message += $"{time.ToString("dd/MM/yyyy HH:mm:ss")}: User-{responseVM.UserScore} : {responseVM.CompScore}-Comp_";
 
                 if (responseVM.HasWon == 1 || responseVM.HasWon == 2)
                 {
@@ -259,7 +259,7 @@ namespace SuefaApp.Implementations
                 {
                     AppUser = appUser,
                     CreatedAt = DateTime.UtcNow.AddHours(4),
-                    Message = $"\n{time.ToString("dd/MM/yyyy HH:mm:ss")}: User-{responseVM.UserScore} : {responseVM.CompScore}-Comp",
+                    Message = $"{time.ToString("dd/MM/yyyy HH:mm:ss")}: User-{responseVM.UserScore} : {responseVM.CompScore}-Comp_",
                 };
 
                 if (responseVM.HasWon == 1 || responseVM.HasWon == 2)

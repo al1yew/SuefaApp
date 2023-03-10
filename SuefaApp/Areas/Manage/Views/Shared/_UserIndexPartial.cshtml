@@ -1,0 +1,66 @@
+﻿@model PaginationList<AppUserGetVM>
+
+@{
+    int no = Model.ItemsCount * (Model.Page - 1);
+}
+
+<style>
+    td {
+        letter-spacing: 1.2px;
+        text-align: center;
+        padding: 3px !important;
+        vertical-align: middle !important;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>
+
+<table class="table table-bordered table-striped tblContent">
+    <thead>
+        <tr>
+            <th class="col-lg-1 col-1 text-wrap">№</th>
+            <th class="col-lg-1 col-1 text-wrap">Phone</th>
+            <th class="col-lg-1 col-1 text-wrap">Events</th>
+            <th class="col-lg-1 col-1 text-wrap">Win Times</th>
+            <th class="col-lg-1 col-1 text-wrap">Play Times</th>
+            <th class="col-lg-1 col-1 text-wrap">Login Times</th>
+            <th class="col-lg-1 col-1 text-wrap">Created At</th>
+            <th class="col-lg-1 col-1 text-wrap">Is Admin?</th>
+            <th class="col-lg-1 col-1 text-wrap">Update</th>
+            <th class="col-lg-1 col-1 text-wrap">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (AppUserGetVM user in Model)
+        {
+            no++;
+            <tr>
+                <td class="col-lg-1 col-1 text-wrap">@no</td>
+                <td class="col-lg-1 col-1 text-wrap">@user.UserName</td>
+                <td class="col-lg-1 col-1 text-wrap">@user.Events.Count</td>
+                <td class="col-lg-1 col-1 text-wrap">@user.WinTimes</td>
+                <td class="col-lg-1 col-1 text-wrap">@user.PlayTimes</td>
+                <td class="col-lg-1 col-1 text-wrap">@user.LoginTimes</td>
+                <td class="col-lg-1 col-1 text-wrap">
+                    @user.CreatedAt.GetValueOrDefault().ToString("dd/MM/yyyy")
+                    <br />
+                    @user.CreatedAt.GetValueOrDefault().ToString("HH:mm:ss")
+                </td>
+                <td class="col-lg-1 col-1 text-wrap @(user.IsAdmin ? "text-success" : "text-danger")">
+                    @(user.IsAdmin ? "Yes" : "No")
+                </td>
+                <td class="col-lg-1 col-1 text-wrap">
+                    <a class="btn btn-warning" asp-area="Manage" asp-controller="User" asp-action="Update"
+                       asp-route-id="@user.Id">Update</a>
+                </td>
+                <td class="col-lg-1 col-1 text-wrap">
+                    <a class="btn btn-danger deleteBtn" asp-area="Manage" asp-controller="User"
+                       asp-action="Delete" asp-route-id="@user.Id" asp-route-select="@ViewBag.Select"
+                       asp-route-phone="@ViewBag.Phone" asp-route-page="@ViewBag.Page">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

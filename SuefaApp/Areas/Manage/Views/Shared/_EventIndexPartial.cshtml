@@ -1,0 +1,70 @@
+﻿@model PaginationList<EventGetVM>
+
+@{
+    int no = Model.ItemsCount * (Model.Page - 1);
+}
+
+<style>
+    th {
+        text-align: center;
+        padding: 3px !important;
+        vertical-align: middle !important;
+        font-size: 16px;
+    }
+
+    td {
+        text-align: center;
+        padding: 4px !important;
+        color: blue;
+        vertical-align: middle !important;
+        font-size: 16px;
+    }
+
+    .saxlayan {
+        overflow-x: scroll;
+    }
+</style>
+
+<table class="table table-bordered table-striped tblContent">
+    <thead>
+        <tr>
+            <th class="col-lg-1 col-1 text-wrap">№</th>
+            <th class="col-lg-1 col-1 text-wrap">Phone</th>
+            <th class="col-lg-1 col-1 text-wrap">Has Won?</th>
+            <th class="col-lg-1 col-1 text-wrap">Message</th>
+            <th class="col-lg-1 col-1 text-wrap">Created</th>
+            <th class="col-lg-1 col-1 text-wrap">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (EventGetVM eventGetVM in Model)
+        {
+            no++;
+            <tr>
+                <td class="col-lg-1 col-1 text-wrap">@no</td>
+                <td class="col-lg-1 col-1 text-wrap">@eventGetVM.AppUser.UserName</td>
+                <td class="col-lg-1 col-1 text-wrap @(eventGetVM.HasWon ? "text-success" : "text-danger")">@(eventGetVM.HasWon ? "Yes" : "No")</td>
+                <td class="col-lg-1 col-1 text-wrap ">
+                    @{ 
+                        string[] msgs = eventGetVM.Message.Split("_");
+
+                        foreach (string msg in msgs)
+                        {
+                            <span>@msg</span>
+                        }
+                    }
+                </td>
+                <td class="col-lg-1 col-1 text-wrap">
+                    @eventGetVM.CreatedAt.GetValueOrDefault().ToString("dd/MM/yyyy")
+                    <br />
+                    @eventGetVM.CreatedAt.GetValueOrDefault().ToString("HH:mm:ss")
+                </td>
+                <td class="col-lg-1 col-1 text-wrap">
+                    <a class="btn btn-danger deleteBtn" asp-area="Manage" asp-controller="Event"
+                       asp-action="DeleteEvent" asp-route-id="@eventGetVM.Id" asp-route-select="@ViewBag.Select"
+                       asp-route-phone="@ViewBag.Phone" asp-route-type="@ViewBag.Type" asp-route-page="@ViewBag.Page">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

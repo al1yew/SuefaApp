@@ -1,0 +1,71 @@
+﻿@model AppUserUpdateVM
+
+<style>
+    .keeperadminphone {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+        .keeperadminphone input {
+            padding: 5px;
+            color: black;
+            letter-spacing: 2px;
+        }
+
+        .keeperadminphone span {
+            border-right: 0.5px solid #d1d3e2;
+            padding-right: 5px;
+            color: black;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+    input {
+        color: black;
+        width: 100%;
+        font-size: 16px;
+        letter-spacing: 2px;
+        border: none;
+        outline: none;
+    }
+</style>
+
+<div class="d-flex flex-wrap justify-content-center w-100">
+    <div class="col-lg-12 col-12 d-flex flex-wrap justify-content-between">
+        <div asp-validation-summary="ModelOnly" class="text-danger col-lg-12 col-12"></div>
+        <form method="post" class="p-5 telefonpadding birazpadding d-flex col-lg-12 align-items-baseline flex-wrap justify-content-around">
+            <div class="flex-wrap d-flex justify-content-between @(!Model.IsAdmin ? "col-lg-6" : "col-lg-4") col-12 p-1" style="margin-bottom: 20px">
+                <div class="col-lg-12 col-12 form-control align-items-center keeperadminphone">
+                    <span>+994</span>
+                    <input maxlength="9" id="login" placeholder="Phone..." asp-for="PhoneNumber">
+                </div>
+                <span asp-validation-for="PhoneNumber" class="text-danger col-lg-12 col-12 text-center"></span>
+            </div>
+
+            @if (Model.IsAdmin)
+            {
+                <div class="flex-wrap d-flex justify-content-between col-lg-4 col-12 p-1 mb-3">
+                    <div class="col-lg-12 col-12 align-items-center p-0">
+                        <input asp-for="Password" class="form-control" placeholder="Password...">
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger col-lg-12 col-12 text-center pt-1"></span>
+                </div>
+            }
+
+            <div class="form-check">
+                <input asp-for="IsAdmin" class="form-check-input" style="width: 25%;" type="checkbox" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Is Admin
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary col-lg-12 col-12 ">Update</button>
+        </form>
+    </div>
+</div>
+
+@section Script
+{
+    <partial name="_ValidationPartial">
+}

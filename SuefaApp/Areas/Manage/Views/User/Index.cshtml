@@ -1,0 +1,128 @@
+﻿@model PaginationList<AppUserGetVM>
+
+<style>
+    .keeperadminphone {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+        .keeperadminphone input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            color: black;
+            letter-spacing: 2px;
+        }
+
+        .keeperadminphone span {
+            border-right: 0.5px solid #d1d3e2;
+            padding-right: 5px;
+            color: black;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+    input {
+        color: black;
+        font-size: 16px;
+        width: 100%;
+        letter-spacing: 2px;
+    }
+
+    .forcheck {
+        width: 100%;
+        max-height: 200px;
+        overflow-y: scroll;
+        padding: 15px 5px;
+        border: 1px solid grey;
+        display: none;
+    }
+</style>
+
+<div class="main-panel ">
+    <div class="content-wrapper pt-0 pb-2">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-2">
+                <div class="col-lg-9-5 col-12 p-0">
+                    <form class="d-flex p-0 telefonpadding flex-wrap justify-content-between align-items-center col-12">
+                        <div class="col-lg-2 p-0 pr-2 col-12 align-items-center telefonpadding py-1 d-flex justify-content-between">
+                            <label class="form-label p-0 m-0 pr-2">Show:</label>
+                            <select id="select" name="select" class="form-select form-control">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                                <option value="40">40</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <script>
+                                let selectvalue = "@ViewBag.Select"
+
+                                let selectoption = document.getElementById("select")
+
+                                selectoption.value = selectvalue
+                            </script>
+                        </div>
+                        <div class="col-lg-7 col-12 form-control telefonup align-items-center py-1 keeperadminphone">
+                            <span>+994</span>
+                            <input type="text" name="phone" autocomplete="off" maxlength="9" id="finduser" value="@ViewBag.Phone" placeholder="Enter Phone...">
+                        </div>
+                        <div class="col-lg-1 telefonpadding telefonup col-5-5">
+                            <button class="btn btn-primary telefonw100" type="submit">Filter</button>
+                        </div>
+                        <div class="col-lg-1 telefonpadding telefonup col-5-5">
+                            <button class="btn btn-danger telefonw100" id="clearform" type="reset">Clear</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-2 col-12 telefonpadding telefonup">
+                    <a class="btn btn-success telefonw100" asp-area="Manage" asp-controller="User"
+                       asp-action="Create">Create Admin</a>
+                </div>
+            </div>
+            <div class="tabledata">
+                @await Html.PartialAsync("_UserIndexPartial", Model)
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center w-100 align-items-center d-flex mt-2">
+        <ul class="pagination flex-wrap d-flex justify-content-center align-content-center p-3">
+            @if (Model.HasPrev)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-area="Manage"
+                       asp-controller="User" asp-action="Index" asp-route-select="@ViewBag.Select"
+                       asp-route-phone="@ViewBag.Phone" asp-route-page="1">@("<<")</a>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" asp-area="Manage"
+                       asp-controller="User" asp-action="Index" asp-route-select="@ViewBag.Select"
+                       asp-route-phone="@ViewBag.Phone" asp-route-page="@(Model.Page-1)">@("<")</a>
+                </li>
+            }
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <li class="page-item @(Model.Page == i ? "active":"")">
+                    <a class="page-link" asp-area="Manage" asp-controller="User" asp-action="Index"
+                       asp-route-select="@ViewBag.Select" asp-route-phone="@ViewBag.Phone" asp-route-page="@i">@i</a>
+                </li>
+            }
+            @if (Model.HasNext)
+            {
+                <li class="page-item">
+                    <a class="page-link" asp-area="Manage" asp-controller="User"
+                       asp-action="Index" asp-route-select="@ViewBag.Select" asp-route-phone="@ViewBag.Phone"
+                       asp-route-page="@(Model.Page+1)">@(">")</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" asp-area="Manage" asp-controller="User"
+                       asp-action="Index" asp-route-select="@ViewBag.Select" asp-route-phone="@ViewBag.Phone"
+                       asp-route-page="@Model.PageCount">@(">>")</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

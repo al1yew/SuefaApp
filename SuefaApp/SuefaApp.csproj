@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Manage\Views\" />
     <Folder Include="wwwroot\assets\images\" />
     <Folder Include="wwwroot\assets\plugins\jquery\" />
   </ItemGroup>

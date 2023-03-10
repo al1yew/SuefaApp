@@ -48,7 +48,6 @@ $(document).ready(function () {
 
     $(document).on('click', '#clearform', function () {
         $("#finduser").val("");
-        $("#findvin").val("");
 
         let url = window.location.href;
         url = url.split("?");
@@ -57,12 +56,4 @@ $(document).ready(function () {
 
     //#endregion Clear form and url, reload
 
-    //#region Event table at user detail page
-
-    $(document).on('click', '#eventtr', function (e) {
-
-        $(this).next().find('.eventmsgs').slideToggle();
-    });
-
-    //#endregion Event table at user detail page
 });
