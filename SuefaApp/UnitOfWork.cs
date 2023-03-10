@@ -9,7 +9,7 @@ namespace SuefaApp
     {
         private readonly AppUserRepository _appUserRepository;
         private readonly EventRepository _eventRepository;
-        private readonly EventMessageRepository _eventMessageRepository;
+
         private readonly AppDbContext _context;
 
         public UnitOfWork(AppDbContext context)
@@ -19,7 +19,7 @@ namespace SuefaApp
 
         public IAppUserRepository AppUserRepository => _appUserRepository ?? new AppUserRepository(_context);
         public IEventRepository EventRepository => _eventRepository ?? new EventRepository(_context);
-        public IEventMessageRepository EventMessageRepository => _eventMessageRepository ?? new EventMessageRepository(_context);
+
 
 
 

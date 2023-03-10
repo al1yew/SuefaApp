@@ -12,6 +12,5 @@ namespace SuefaApp.DAL
         }
 
         public DbSet<Event> Events { get; set; }
-        public DbSet<EventMessage> EventMessages { get; set; }
     }
 }

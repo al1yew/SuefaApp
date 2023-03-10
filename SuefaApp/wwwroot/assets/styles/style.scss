@@ -68,7 +68,7 @@ input::-webkit-inner-spin-button {
     z-index: 9999999999999;
     top: 0;
     left: 0;
-    background-color: #46025F !important;
+    background-color: #46025fa6 !important;
 
     .preloader {
         border: 10px solid #89DC65;
@@ -238,7 +238,7 @@ input::-webkit-inner-spin-button {
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
-                margin-bottom: 35px;
+                margin-bottom: 28px;
 
                 span {
                     text-align: center;
@@ -263,7 +263,7 @@ input::-webkit-inner-spin-button {
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
-                margin-bottom: 20px;
+                margin-bottom: 18px;
 
                 span {
                     text-align: center;
@@ -289,7 +289,7 @@ input::-webkit-inner-spin-button {
                 justify-content: center;
                 align-items: center;
                 flex-wrap: wrap;
-                margin-bottom: 35px;
+                margin-bottom: 14px;
                 font-size: 105px;
                 font-weight: 800;
                 line-height: 100px;
@@ -309,11 +309,23 @@ input::-webkit-inner-spin-button {
             }
 
             .fourth {
+                text-align: center;
+                font-size: 25px;
+                letter-spacing: 2px;
+                font-family: var(--montbold);
+                margin-bottom: 18px;
+            }
+
+            .fourthcolor {
+                color: #89DC65;
+            }
+
+            .fifth {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
-                margin-bottom: 35px;
+                margin-bottom: 28px;
 
                 .gametap {
                     background: rgba(255, 255, 255, 0.01);
@@ -335,10 +347,10 @@ input::-webkit-inner-spin-button {
                 }
             }
 
-            .fifth {
+            .sixth {
                 background: #89DC65;
                 border-radius: 30px;
-                padding: 20px;
+                padding: 15px;
                 text-align: center;
                 width: 25%;
                 font-weight: 600;
@@ -348,11 +360,20 @@ input::-webkit-inner-spin-button {
                 color: #46025F;
                 cursor: pointer;
                 transition: 0.2s;
+                margin-bottom: 10px;
 
                 &:hover {
                     background: #89dc6570;
                     color: rgb(187, 187, 187);
                 }
+            }
+
+            .seventh {
+                text-align: center;
+                color: white;
+                background-color: green;
+                border-radius: 15px;
+                padding: 10px;
             }
 
             .absolutuser {

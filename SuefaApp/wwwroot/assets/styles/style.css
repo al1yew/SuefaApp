@@ -74,7 +74,7 @@ input::-webkit-inner-spin-button {
   z-index: 9999999999999;
   top: 0;
   left: 0;
-  background-color: #46025F !important;
+  background-color: #46025fa6 !important;
 }
 
 .preloaderdiv .preloader {
@@ -199,7 +199,7 @@ input::-webkit-inner-spin-button {
     -webkit-box-pack: justify !important;
         -ms-flex-pack: justify !important;
             justify-content: space-between !important;
-    margin-bottom: 30px !important;
+    margin-bottom: 15px !important;
     font-size: 65px !important;
     line-height: 70px !important;
   }
@@ -207,21 +207,24 @@ input::-webkit-inner-spin-button {
     margin: 0 !important;
   }
   #mainpage .all .middle .fourth {
+    font-size: 18px !important;
+  }
+  #mainpage .all .middle .fifth {
     margin-bottom: 30px !important;
   }
-  #mainpage .all .middle .fourth .gametap {
+  #mainpage .all .middle .fifth .gametap {
     width: 28% !important;
     height: calc((100vw*0.27)) !important;
     margin: 0 !important;
   }
-  #mainpage .all .middle .fourth .gametap svg {
+  #mainpage .all .middle .fifth .gametap svg {
     height: calc(100vw*0.15) !important;
   }
-  #mainpage .all .middle .fourth .gametap:hover {
+  #mainpage .all .middle .fifth .gametap:hover {
     -webkit-transform: translateY(0%) scale(1) !important;
             transform: translateY(0%) scale(1) !important;
   }
-  #mainpage .all .middle .fifth {
+  #mainpage .all .middle .sixth {
     padding: 10px !important;
     width: 50% !important;
     font-size: 16px !important;
@@ -274,25 +277,28 @@ input::-webkit-inner-spin-button {
   }
   #mainpage .all .middle .third {
     width: 100% !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 15px !important;
     font-size: 70px !important;
     line-height: 70px !important;
   }
   #mainpage .all .middle .fourth {
+    font-size: 22px !important;
+  }
+  #mainpage .all .middle .fifth {
     margin-bottom: 20px !important;
   }
-  #mainpage .all .middle .fourth .gametap {
+  #mainpage .all .middle .fifth .gametap {
     width: 100px !important;
     height: 100px !important;
   }
-  #mainpage .all .middle .fourth .gametap svg {
+  #mainpage .all .middle .fifth .gametap svg {
     height: 50px !important;
   }
-  #mainpage .all .middle .fourth .gametap:hover {
+  #mainpage .all .middle .fifth .gametap:hover {
     -webkit-transform: translateY(0%) scale(1) !important;
             transform: translateY(0%) scale(1) !important;
   }
-  #mainpage .all .middle .fifth {
+  #mainpage .all .middle .sixth {
     width: 35% !important;
     font-size: 16px !important;
   }
@@ -325,21 +331,21 @@ input::-webkit-inner-spin-button {
     font-size: 16px !important;
   }
   #mainpage .all .middle .third {
-    margin-bottom: 30px !important;
+    margin-bottom: 15px !important;
     font-size: 90px !important;
     line-height: 80px !important;
   }
-  #mainpage .all .middle .fourth {
+  #mainpage .all .middle .fifth {
     margin-bottom: 30px !important;
   }
-  #mainpage .all .middle .fourth .gametap {
+  #mainpage .all .middle .fifth .gametap {
     width: 100px !important;
     height: 100px !important;
   }
-  #mainpage .all .middle .fourth .gametap svg {
+  #mainpage .all .middle .fifth .gametap svg {
     height: 70px !important;
   }
-  #mainpage .all .middle .fifth {
+  #mainpage .all .middle .sixth {
     padding: 15px !important;
     width: 35% !important;
     font-size: 18px !important;
@@ -550,7 +556,7 @@ input::-webkit-inner-spin-button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
 
 #mainpage .all .middle .first span {
@@ -585,7 +591,7 @@ input::-webkit-inner-spin-button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 #mainpage .all .middle .second span {
@@ -618,7 +624,7 @@ input::-webkit-inner-spin-button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 35px;
+  margin-bottom: 14px;
   font-size: 105px;
   font-weight: 800;
   line-height: 100px;
@@ -638,6 +644,18 @@ input::-webkit-inner-spin-button {
 }
 
 #mainpage .all .middle .fourth {
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-family: var(--montbold);
+  margin-bottom: 18px;
+}
+
+#mainpage .all .middle .fourthcolor {
+  color: #89DC65;
+}
+
+#mainpage .all .middle .fifth {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -649,10 +667,10 @@ input::-webkit-inner-spin-button {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
 
-#mainpage .all .middle .fourth .gametap {
+#mainpage .all .middle .fifth .gametap {
   background: rgba(255, 255, 255, 0.01);
   -webkit-box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65;
           box-shadow: inset 0px 4px 18px #89DC65, inset 0px 1px 0px #89DC65;
@@ -675,16 +693,16 @@ input::-webkit-inner-spin-button {
   transition: 0.2s;
 }
 
-#mainpage .all .middle .fourth .gametap:hover {
+#mainpage .all .middle .fifth .gametap:hover {
   background: rgba(153, 6, 6, 0.2);
   -webkit-transform: translateY(5%) scale(1.1);
           transform: translateY(5%) scale(1.1);
 }
 
-#mainpage .all .middle .fifth {
+#mainpage .all .middle .sixth {
   background: #89DC65;
   border-radius: 30px;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   width: 25%;
   font-weight: 600;
@@ -695,11 +713,20 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  margin-bottom: 10px;
 }
 
-#mainpage .all .middle .fifth:hover {
+#mainpage .all .middle .sixth:hover {
   background: #89dc6570;
   color: #bbbbbb;
+}
+
+#mainpage .all .middle .seventh {
+  text-align: center;
+  color: white;
+  background-color: green;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 #mainpage .all .middle .absolutuser {

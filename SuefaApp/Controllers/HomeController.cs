@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SuefaApp.Interfaces;
 using SuefaApp.Models;
+using SuefaApp.ViewModels.GameVMs;
 using SuefaApp.ViewModels.LoginVMs;
 using System;
 using System.Threading.Tasks;
@@ -28,6 +29,8 @@ namespace SuefaApp.Controllers
                 return RedirectToAction("Login");
             }
 
+            await _homeService.CreateEvent();
+
             return View();
         }
 
@@ -49,6 +52,18 @@ namespace SuefaApp.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public async Task<ResponseVM> Game([FromBody] RequestVM requestVM)
+        {
+            return await _homeService.Game(requestVM);
+        }
+
+        public async Task<IActionResult> CreateEvent()
+        {
+            await _homeService.CreateEvent();
+
+            return Ok();
+        }
 
 
 
@@ -67,10 +82,7 @@ namespace SuefaApp.Controllers
 
 
 
-
-
-
-        //#region Created Roles
+        #region Created Roles
 
         //public async Task<IActionResult> CreateRole()
         //{
@@ -80,9 +92,9 @@ namespace SuefaApp.Controllers
         //    return Content("Roli yest");
         //}
 
-        //#endregion
+        #endregion
 
-        //#region Created Super Admin
+        #region Created Super Admin
 
         //public async Task<IActionResult> CreateAdmin()
         //{
@@ -95,6 +107,7 @@ namespace SuefaApp.Controllers
         //        CreatedAt = DateTime.UtcNow.AddHours(4),
         //        WinTimes = 0,
         //        PlayTimes = 0,
+        //        LoginTimes = 0
         //    };
 
         //    await _userManager.CreateAsync(newUser, "Admin123");
@@ -104,9 +117,9 @@ namespace SuefaApp.Controllers
         //    return Content("Admin est");
         //}
 
-        //#endregion
+        #endregion
 
-        //#region Created user
+        #region Created user
 
         //public async Task<IActionResult> Createuser()
         //{
@@ -118,7 +131,8 @@ namespace SuefaApp.Controllers
         //        IsAdmin = false,
         //        CreatedAt = DateTime.UtcNow.AddHours(4),
         //        WinTimes = 0,
-        //        PlayTimes = 0,
+        //        LoginTimes = 0,
+        //        PlayTimes = 0
         //    };
 
         //    IdentityResult result = await _userManager.CreateAsync(newUser);
@@ -128,6 +142,6 @@ namespace SuefaApp.Controllers
         //    return Content("member est");
         //}
 
-        //#endregion
+        #endregion
     }
 }

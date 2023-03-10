@@ -7,13 +7,11 @@ namespace SuefaApp.Models
 {
     public class Event : BaseModel
     {
-        public Nullable<DateTime> UpdatedAt { get; set; }
         public bool HasWon { get; set; }
+        public string Message { get; set; }
 
-        //relation
+        //relations
         public AppUser AppUser { get; set; }
         public string AppUserId { get; set; }
-
-        public List<EventMessage> EventMessages { get; set; }
     }
 }

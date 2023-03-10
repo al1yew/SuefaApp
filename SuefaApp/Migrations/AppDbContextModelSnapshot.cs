@@ -246,37 +246,14 @@ namespace SuefaApp.Migrations
                     b.Property<bool>("HasWon")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Message")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
                     b.ToTable("Events");
-                });
-
-            modelBuilder.Entity("SuefaApp.Models.EventMessage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EventId");
-
-                    b.ToTable("EventMessages");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -333,17 +310,8 @@ namespace SuefaApp.Migrations
             modelBuilder.Entity("SuefaApp.Models.Event", b =>
                 {
                     b.HasOne("SuefaApp.Models.AppUser", "AppUser")
-                        .WithMany()
+                        .WithMany("Events")
                         .HasForeignKey("AppUserId");
-                });
-
-            modelBuilder.Entity("SuefaApp.Models.EventMessage", b =>
-                {
-                    b.HasOne("SuefaApp.Models.Event", "Event")
-                        .WithMany("EventMessages")
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

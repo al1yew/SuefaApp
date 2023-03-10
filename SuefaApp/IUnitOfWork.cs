@@ -7,7 +7,8 @@ namespace SuefaApp
     {
         IAppUserRepository AppUserRepository { get; }
         IEventRepository EventRepository { get; }
-        IEventMessageRepository EventMessageRepository { get; }
+
+
         Task<int> CommitAsync();
         int Commit();
     }
