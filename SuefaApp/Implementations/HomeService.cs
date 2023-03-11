@@ -150,6 +150,8 @@ namespace SuefaApp.Implementations
 
         public async Task<ResponseVM> Game(RequestVM requestVM)
         {
+            #region random
+
             Random random = new Random();
 
             int comp = random.Next(1, 4);
@@ -159,18 +161,21 @@ namespace SuefaApp.Implementations
                 "Qadanalaram e!", "Bu uşaq dağıdır da!", "Yaxinsan!", "Udacağsan!", "Davam Davam Davam!" };
             int userRandom = random.Next(0, userBeats.Length);
 
-            string[] compBeats = { "Olanda olurda...", "Bəxtinizi yenə sınayın...", "Məğlub oldunuz...",
+            string[] compBeats = { "Olanda olurda...", "Bəxtivi yenə sına...", "Məğlub oldun...",
                 "Tələsmə Zaur...", "Tələsən Təndirə Düşər!" };
             int compRandom = random.Next(0, compBeats.Length);
 
             string[] draw = { "Heç heçə", "Heçnə itirmədin!" };
             int drawRandom = random.Next(0, draw.Length);
 
+            #endregion
+
             ResponseVM responseVM = new ResponseVM()
             {
                 UserScore = requestVM.UserScore,
                 CompScore = requestVM.CompScore,
-                CompSelected = comp
+                CompSelected = comp,
+                HasWon = 0
             };
 
             #region game
@@ -252,6 +257,10 @@ namespace SuefaApp.Implementations
                     currentEvent.HasWon = true;
                     appUser.WinTimes += 1;
                 }
+                else
+                {
+                    currentEvent.HasWon = false;
+                }
             }
             else
             {
@@ -267,6 +276,10 @@ namespace SuefaApp.Implementations
                     appUser.WinTimes += 1;
                     userEvent.HasWon = true;
                 }
+                else
+                {
+                    userEvent.HasWon = false;
+                }
 
                 await _unitOfWork.EventRepository.AddAsync(userEvent);
             }
@@ -280,6 +293,19 @@ namespace SuefaApp.Implementations
         {
             AppUser appUser = await _unitOfWork.AppUserRepository.GetAsync(x =>
             x.UserName == _httpContextAccessor.HttpContext.User.Identity.Name, "Events");
+
+            List<Event> nullEvents = await _unitOfWork.EventRepository.GetAllByExAsync(x => x.Message == null);
+            List<Event> shitEvents = await _unitOfWork.EventRepository.GetAllByExAsync(x => x.Message != null && x.Message.Length < 200);
+
+            foreach (Event eventik in nullEvents)
+            {
+                _unitOfWork.EventRepository.Remove(eventik);
+            }
+
+            foreach (Event eventikik in shitEvents)
+            {
+                _unitOfWork.EventRepository.Remove(eventikik);
+            }
 
             var time = DateTime.UtcNow.AddHours(4);
 

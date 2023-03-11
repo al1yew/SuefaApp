@@ -721,6 +721,63 @@ input::-webkit-inner-spin-button {
   color: #bbbbbb;
 }
 
+#mainpage .all .middle .vopros {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+#mainpage .all .middle .vopros span {
+  font-size: 18px;
+}
+
+#mainpage .all .middle .vopros span:nth-child(1) {
+  background: #89DC65;
+  border-radius: 10px;
+  color: #46025F;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+#mainpage .all .middle .vopros span:nth-child(2) {
+  background: #89DC65;
+  border-radius: 10px;
+  color: #46025F;
+  padding: 8px 14px;
+  cursor: pointer;
+  margin-right: 15px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#mainpage .all .middle .vopros span:nth-child(2):hover {
+  color: black;
+  background-color: #FFF;
+}
+
+#mainpage .all .middle .vopros span:nth-child(3) {
+  background: #89DC65;
+  border-radius: 10px;
+  color: #46025F;
+  padding: 8px 14px;
+  margin-right: 15px;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+#mainpage .all .middle .vopros span:nth-child(3):hover {
+  color: black;
+  background-color: #FFF;
+}
+
 #mainpage .all .middle .seventh {
   text-align: center;
   color: white;

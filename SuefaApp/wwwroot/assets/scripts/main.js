@@ -108,32 +108,27 @@ $(document).ready(function () {
                     $("#result").removeClass("text-success");
                     $("#result").addClass("text-danger");
                 }
-                else if (result == 2) {
-                    toastr.warning('Error!');
-                    $('#user').html("0");
-                    $('#comp').html("0");
-                    return;
-                }
 
                 $("#result").html(message);
 
                 if (hasWon == 1) {
-                    $("#ifwon").html("Təbriklər! Siz 5:0 etdiyiniz üçün 5 manat qazandiniz! 24 saat ərzində sizin nömrəniz ilə əlaqə saxlayacayıq!");
+                    $("#ifwon").html("Təbriklər! Siz 5:0 etdiyiniz üçün 1 manat qazandiniz! 24 saat ərzində sizin nömrəniz ilə əlaqə saxlayacayıq!");
                     $("#ifwon").removeClass("d-none");
+                    $("#vopros").removeClass("d-none");
+                    $("#reload").addClass("d-none");
+                    $(".fifth").addClass("d-none");
 
-                    axios.get("/Home/CreateEvent")
-                        .then(function (response) {
-                            $("#result").removeClass("text-warning");
-                            $("#result").removeClass("text-danger");
-                            $("#result").removeClass("text-success");
-                            $("#result").html("Oyunu Başlayın");
-                            $('#user').html("0");
-                            $('#comp').html("0");
-                        })
+                    if (result == 0) {
+                        $("#ifwon").html("");
+                        $("#ifwon").addClass("d-none");
+                        $("#vopros").addClass("d-none");
+                        $("#reload").removeClass("d-none");
+                        $(".fifth").removeClass("d-none");
+                    }
                 }
 
                 if (hasWon == 2) {
-                    $("#ifwon").html("Təbriklər! Siz 10:0 etdiyiniz üçün 50 manat qazandiniz! 24 saat ərzində sizin nömrəniz ilə əlaqə saxlayacayıq!");
+                    $("#ifwon").html("Təbriklər! Siz 10:0 etdiyiniz üçün 30 manat qazandiniz! 24 saat ərzində sizin nömrəniz ilə əlaqə saxlayacayıq!");
                     $("#ifwon").removeClass("d-none");
 
                     axios.get("/Home/CreateEvent")
@@ -165,6 +160,54 @@ $(document).ready(function () {
                 return;
             });
     })
+
+    //#region reload
+
+    $(document).on('click', '#reload', function () {
+
+        axios.get("/Home/CreateEvent")
+            .then(function (response) {
+                toastr.success('Oyna!');
+                $("#result").removeClass("text-warning");
+                $("#result").removeClass("text-danger");
+                $("#result").removeClass("text-success");
+                $("#result").html("Oyunu Başlayın");
+                $('#user').html("0");
+                $('#comp').html("0");
+            })
+    })
+
+    //#endregion reload
+
+    //#region vopros
+
+    $(document).on('click', '#yes', function () {
+        $("#ifwon").html("");
+        $("#ifwon").addClass("d-none");
+        $("#vopros").addClass("d-none");
+        $("#reload").removeClass("d-none");
+        $(".fifth").removeClass("d-none");
+    })
+
+    $(document).on('click', '#no', function () {
+        axios.get("/Home/CreateEvent")
+            .then(function (response) {
+                toastr.success('Oyna!');
+                $("#result").removeClass("text-warning");
+                $("#result").removeClass("text-danger");
+                $("#result").removeClass("text-success");
+                $("#result").html("Oyunu Başlayın");
+                $('#user').html("0");
+                $('#comp').html("0");
+                $("#ifwon").html("");
+                $("#ifwon").addClass("d-none");
+                $("#vopros").addClass("d-none");
+                $("#reload").removeClass("d-none");
+                $(".fifth").removeClass("d-none");
+            })
+    })
+
+    //#endregion vopros
 
     //#endregion game
 
@@ -213,22 +256,6 @@ $(document).ready(function () {
 
     //#endregion login input focus on click on span
 
-    //#region reload
 
-    $(document).on('click', '#reload', function () {
-
-        axios.get("/Home/CreateEvent")
-            .then(function (response) {
-                toastr.success('Oyna!');
-                $("#result").removeClass("text-warning");
-                $("#result").removeClass("text-danger");
-                $("#result").removeClass("text-success");
-                $("#result").html("Oyunu Başlayın");
-                $('#user').html("0");
-                $('#comp').html("0");
-            })
-    })
-
-    //#endregion reload
 
 });

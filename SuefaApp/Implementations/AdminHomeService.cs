@@ -23,7 +23,7 @@ namespace SuefaApp.Implementations
 
         public async Task<AdminHomeVM> GetData()
         {
-            List<AppUser> appUsers = await _unitOfWork.AppUserRepository.GetAllByExAsync(x => !x.IsAdmin);
+            List<AppUser> appUsers = await _unitOfWork.AppUserRepository.GetAllAsync();
 
             int newUsersCount = appUsers.Where(x => (DateTime.Now - x.CreatedAt.Value).TotalDays <= 1).Count();
 
