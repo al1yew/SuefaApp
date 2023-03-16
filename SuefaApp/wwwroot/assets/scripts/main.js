@@ -164,6 +164,7 @@ $(document).ready(function () {
     //#region reload
 
     $(document).on('click', '#reload', function () {
+        $('.preloaderdiv').removeClass('d-none')
 
         axios.get("/Home/CreateEvent")
             .then(function (response) {
@@ -174,6 +175,7 @@ $(document).ready(function () {
                 $("#result").html("Oyunu Başlayın");
                 $('#user').html("0");
                 $('#comp').html("0");
+                $('.preloaderdiv').addClass('d-none')
             })
     })
 
