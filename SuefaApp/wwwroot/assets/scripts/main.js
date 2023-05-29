@@ -115,7 +115,7 @@ $(document).ready(function () {
                 $("#result").html(message);
 
                 if (hasWon == 1) {
-                    $("#ifwon").html("Təbriklər! Siz 5:0 etdiyiniz üçün 1 manat qazandiniz! 24 saat ərzində sizin nömrəniz ilə əlaqə saxlayacayıq!");
+                    $("#ifwon").html("Təbriklər! Siz 7:0 etdiyiniz üçün 3 manat qazandiniz! 24 saat ərzində sizin nömrəniz ilə əlaqə saxlayacayıq!");
                     $("#ifwon").removeClass("d-none");
                     $("#vopros").removeClass("d-none");
                     $("#reload").addClass("d-none");

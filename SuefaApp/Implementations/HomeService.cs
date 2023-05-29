@@ -125,22 +125,13 @@ namespace SuefaApp.Implementations
 
         public async Task<bool> CheckLogin(string phone)
         {
-            Regex regexNumber = new Regex("^[0-9]+$");
-
-            if (regexNumber.IsMatch(phone.ToString()))
-            {
-                if (!(phone.StartsWith("50") ||
-                    phone.StartsWith("10") ||
-                    phone.StartsWith("51") ||
-                    phone.StartsWith("70") ||
-                    phone.StartsWith("77") ||
-                    phone.StartsWith("99") ||
-                    phone.StartsWith("55")))
-                {
-                    return false;
-                }
-            }
-            else
+            if (!(phone.StartsWith("50") ||
+                phone.StartsWith("10") ||
+                phone.StartsWith("51") ||
+                phone.StartsWith("70") ||
+                phone.StartsWith("77") ||
+                phone.StartsWith("99") ||
+                phone.StartsWith("55")))
             {
                 return false;
             }
@@ -231,7 +222,7 @@ namespace SuefaApp.Implementations
 
             #endregion
 
-            if (responseVM.UserScore == 5 && responseVM.CompScore == 0)
+            if (responseVM.UserScore == 7 && responseVM.CompScore == 0)
             {
                 responseVM.HasWon = 1;
             }
