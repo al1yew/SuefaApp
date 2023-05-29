@@ -168,7 +168,8 @@ $(document).ready(function () {
 
     $(document).on('click', '#reload', function () {
         $('.preloaderdiv').removeClass('d-none')
-
+        $('.absolutuser').removeClass('moveright');
+        $('.absolutcomp').removeClass('moveleft');
         axios.get("/Home/CreateEvent")
             .then(function (response) {
                 toastr.success('Oyna!');
